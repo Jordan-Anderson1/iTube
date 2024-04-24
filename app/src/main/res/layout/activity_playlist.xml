@@ -16,16 +16,14 @@
         android:textSize="30sp"
         android:textStyle="bold" />
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-        <TextView
+
+        <ListView
+            android:id="@+id/urlListView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/urls"/>
+            android:layout_height="match_parent" />
 
-    </ScrollView>
-    
+
+
 
 </LinearLayout>

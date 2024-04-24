@@ -85,6 +85,26 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        goToPlaylistButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), PlaylistActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        playButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                Intent intent = new Intent(getApplicationContext(), WatchActivity.class);
+                intent.putExtra("url", urlInput.getText().toString());
+                startActivity(intent);
+            }
+        });
+
 
 
 
