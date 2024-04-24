@@ -5,50 +5,66 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login"
-    android:orientation="vertical"
+    android:background="@color/black"
     android:gravity="center"
-    android:padding="15dp">
-    
+    android:orientation="vertical"
+    android:padding="15dp"
+    tools:context=".Login">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="256dp"
+        android:src="@drawable/logo" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="Login"
-        android:textSize="20sp"
-        android:gravity="center"/>
+        android:textColor="@color/Ivory"
+        android:textSize="28sp"
+        android:textStyle="bold" />
 
 
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:padding="10dp"
+        android:layout_margin="8dp"
+        android:textColorHint="@color/black"
+        android:background="@color/Celadon" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/email"
-            android:hint="Email"/>
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/password"
-            android:hint="Password"/>
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:padding="10dp"
+        android:layout_margin="8dp"
+        android:textColorHint="@color/black"
+        android:background="@color/Celadon" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:id="@+id/loginButton"
+        android:layout_width="200dp"
+        android:textStyle="bold"
+        android:textColor="@color/Ivory"
         android:layout_height="wrap_content"
-        android:text="Submit"
-        android:id="@+id/loginButton"/>
+        android:background="@color/red"
+        android:text="Submit" />
 
     <TextView
+        android:id="@+id/registerNow"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Click to register"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:gravity="center"
         android:layout_margin="20dp"
-        android:id="@+id/registerNow"
-        />
-
-
+        android:gravity="center"
+        android:text="Click to register"
+        android:textColor="@color/Celadon"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
 
 </LinearLayout>

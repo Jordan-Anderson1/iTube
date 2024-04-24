@@ -32,9 +32,9 @@ public class WatchActivity extends AppCompatActivity {
         WebView webView = findViewById(R.id.webView);
 
         intent = getIntent();
-        String src = intent.getStringExtra("url");
+        String videoId = intent.getStringExtra("url");
 
-        String video = String.format("<iframe width=\"100%%\" height=\"100%%\" src=\"%s\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer;\" \"autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;\" +\"web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>", src);
+        String video = String.format("<iframe width=\"100%%\" height=\"100%%\" src=\"https://www.youtube.com/embed/%s\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer;\" \"autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;\" +\"web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>", videoId);
 
         webView.loadData(video, "text/html", "utf-8");
 

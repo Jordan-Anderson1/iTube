@@ -63,21 +63,34 @@ public class PlaylistActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
-                    List<String> linksList = (List<String>) document.get("links");
-                    ArrayAdapter<String> adapter = new ArrayAdapter<>(getApplicationContext(),
-                            android.R.layout.simple_list_item_1, linksList);
+                    if(document != null) {
+                        List<String> linksList = (List<String>) document.get("links");
+                        ArrayAdapter<String> adapter = new ArrayAdapter<>(getApplicationContext(),
+                                R.layout.list_item_layout, linksList);
 
-                    listView.setAdapter(adapter);
+                        listView.setAdapter(adapter);
 
-                    listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                        @Override
-                        public void onItemClick(AdapterView<?> parent, android.view.View view, int position, long id) {
-                            String selectedItem = linksList.get(position);
-                            Intent intent = new Intent(getApplicationContext(), WatchActivity.class);
-                            intent.putExtra("url", selectedItem);
-                            startActivity(intent);
-                        }
-                    });
+                        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, android.view.View view, int position, long id) {
+                                String selectedItem = linksList.get(position);
+
+
+                                int equalsIndex = selectedItem.indexOf('=');
+                                String videoId = selectedItem.substring(equalsIndex + 1);
+
+
+                                Intent intent = new Intent(getApplicationContext(), WatchActivity.class);
+                                intent.putExtra("url", videoId);
+                                startActivity(intent);
+                            }
+                        });
+                    }else{
+                        return;
+                    }
+
+
+
 
 
 

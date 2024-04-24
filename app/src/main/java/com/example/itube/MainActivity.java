@@ -98,12 +98,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                String url = urlInput.getText().toString();
+                int equalsIndex = url.indexOf('=');
+                String videoId = url.substring(equalsIndex + 1);
 
                 Intent intent = new Intent(getApplicationContext(), WatchActivity.class);
-                intent.putExtra("url", urlInput.getText().toString());
+                intent.putExtra("url", videoId);
                 startActivity(intent);
             }
         });
+
+
 
 
 
